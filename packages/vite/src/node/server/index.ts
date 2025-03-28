@@ -751,7 +751,7 @@ export async function _createServer(
     _shortcutsOptions: undefined,
   }
 
-  // maintain consistency with the server instance after restarting.
+  // maintain consistency with the server instance after restarting. //重新启动后保持与服务器实例一致性
   const reflexServer = new Proxy(server, {
     get: (_, property: keyof ViteDevServer) => {
       return server[property]

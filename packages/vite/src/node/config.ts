@@ -1034,7 +1034,7 @@ export async function resolveConfig(
     isSsrBuild: command === 'build' && !!config.build?.ssr,
     isPreview,
   }
-
+  //console.log(config.configFile,'configFile...');
   let { configFile } = config
   if (configFile !== false) {
     const loadResult = await loadConfigFromFile(
@@ -1732,7 +1732,6 @@ export async function loadConfigFromFile(
     for (const filename of DEFAULT_CONFIG_FILES) {
       const filePath = path.resolve(configRoot, filename)
       if (!fs.existsSync(filePath)) continue
-
       resolvedPath = filePath
       break
     }
